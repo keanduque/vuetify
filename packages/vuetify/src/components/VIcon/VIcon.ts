@@ -33,7 +33,8 @@ const VIcon = mixins(
   props: {
     disabled: Boolean,
     left: Boolean,
-    right: Boolean
+    right: Boolean,
+    outlined: Boolean
   },
 
   methods: {
@@ -82,7 +83,7 @@ const VIcon = mixins(
       const newChildren: VNodeChildren = []
       const data = this.getDefaultData()
 
-      let iconType = 'material-icons'
+      let iconType = `material-icons${this.outlined ? '-outlined' : ''}`
       // Material Icon delimiter is _
       // https://material.io/icons/
       const delimiterIndex = icon.indexOf('-')
